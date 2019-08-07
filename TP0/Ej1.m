@@ -1,0 +1,1 @@
+x = [ 1067 919 1196 785 1126 936 918 1156 920 948 ];media = mean(x)mediana = median(x)rango = max(x) - min(x)cantidad = size(y)(2);y = (x.-media).**2;varianza =  ( sum(y) / ( cantidad - 1)  )desviacion = sqrt(varianza)
