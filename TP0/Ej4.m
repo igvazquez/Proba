@@ -1,3 +1,5 @@
+
+
 marca = [ 30 60 90 120 150 180 210 240 270 300 ];
 frecuencia = [ 6 28 88 180 247 260 133 42 11 5 ];
 
@@ -26,7 +28,7 @@ extendedMaxLim = maxLim + (intervalSize/2);
 extendedFrencuencia = [0 frecuencia 0];
 extendedMarca = [extendedMinLim marca extendedMaxLim];
 
-subplot(2,1,1)
+subplot(3,1,1)
 bar(marca, frecuencia, 'BarWidth', 1)
 hold on
 title('Frecuencia relativa')
@@ -40,12 +42,16 @@ extendedFrecuenciaACumulada = [ 0 frecuenciaAcumulada ];
 extendedIntervaloAcumulado =  intervalo;
 
 
-subplot(2,1,2)
+subplot(3,1,2)
 bar(marca, frecuenciaAcumulada, 'BarWidth', 1)
 title('Frecuencia acumulada')
 hold on
 plot(extendedIntervaloAcumulado, extendedFrecuenciaACumulada,extendedIntervaloAcumulado, extendedFrecuenciaACumulada,'o')
 hold off
+
+subplot(3,1,3)
+boxplot(frecuencia)
+
 
 media = sum(marca.*frecuencia./sum(frecuencia))
 mediana = 135 + [500 - 302]*intervalSize/247
